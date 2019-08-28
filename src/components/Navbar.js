@@ -1,41 +1,28 @@
-import React, { Component } from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import React from 'react'
+import {
+  Container,
+  Divider,
+  Dropdown,
+  Grid,
+  Header,
+  Image,
+  List,
+  Menu,
+  Segment,
+} from 'semantic-ui-react'
 
-export default class Navbar extends Component {
-  state = { activeItem: 'home' }
+const Navbar = () => (
+  <div>
+    <Menu fixed='top' color='brown' inverted>
+      <Container>
+        <Menu.Item as='a'>Home</Menu.Item>
+        <Menu.Item as='a'>Games</Menu.Item>
+        <Menu.Item as='a'>Forums</Menu.Item>
+        <Menu.Item as='a'>Friends</Menu.Item>
+        <Menu.Item as='a' position='right'>Logout</Menu.Item>
+      </Container>
+    </Menu>
+</div>
+)
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
-  render() {
-    const { activeItem } = this.state
-
-    return (
-      <div>
-        <Menu pointing secondary>
-          <Menu.Item
-            name='Home'
-            active={activeItem === 'Home'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='Games'
-            active={activeItem === 'Games'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='Friends'
-            active={activeItem === 'Friends'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Menu position='right'>
-            <Menu.Item
-              name='Logout'
-              active={activeItem === 'Logout'}
-              onClick={this.handleItemClick}
-            />
-          </Menu.Menu>
-        </Menu>
-      </div>
-    )
-  }
-}
+export default Navbar

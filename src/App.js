@@ -4,6 +4,8 @@ import Login from './components/Login'
 import './App.css';
 import BackgroundLogin from './components/BackgroundLogin';
 import Navbar from './components/Navbar';
+import UserCard from './components/UserCard'
+import Wishlist from './components/Wishlist';
 
 
 
@@ -14,6 +16,8 @@ function App() {
     <div>
       {/* <BackgroundLogin /> */}
       <Navbar />
+      <UserCard /> 
+      <Wishlist />
         
     </div>
   )
