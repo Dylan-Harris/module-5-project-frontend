@@ -12,7 +12,7 @@ import {
 } from 'semantic-ui-react'
 
 const Navbar = () => (
-  <div>
+  <div style={{paddingBottom: 200}}>
     <Menu fixed='top' color='brown' inverted>
       <Container>
         <Menu.Item as='a'>Home</Menu.Item>

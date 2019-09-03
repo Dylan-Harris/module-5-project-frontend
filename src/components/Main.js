@@ -1,5 +1,10 @@
 import React from 'react'
 import GamesContainer from '../containers/GamesContainer'
+import UserCard from './UserCard';
+import Wishlist from './Wishlist';
+import Friends from './Friends';
+import Navbar from './Navbar'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 export default class Main extends React.Component{
 
@@ -14,7 +19,10 @@ export default class Main extends React.Component{
     render() {
         return(
             <div>
-                <GamesContainer games={this.state.games} />
+                 <Navbar />
+                 <UserCard />
+                 <Wishlist />
+                 <Friends />
             </div>
         )
     }
