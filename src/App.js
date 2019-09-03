@@ -6,21 +6,34 @@ import BackgroundLogin from './components/BackgroundLogin';
 import Navbar from './components/Navbar';
 import UserCard from './components/UserCard'
 import Wishlist from './components/Wishlist';
+import Friends from './components/Friends'
+import Main from './components/Main'
 
 
 
-
-
-function App() {
-  return (
-    <div>
-      {/* <BackgroundLogin /> */}
-      <Navbar />
-      <UserCard /> 
-      <Wishlist />
-        
-    </div>
-  )
+export default class App extends React.Component{
+  constructor() {
+    super()
+  }
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/games')
+    .then(res => res.json())
+    .then(data => this.setState({
+        games: data
+    }))
 }
 
-export default App;
+  render() {
+    return(
+      <div>
+      {/* <BackgroundLogin /> */}
+      <Navbar />
+      <Main />
+      {/* <UserCard />  */}
+      {/* <Wishlist /> */}
+      {/* <Friends /> */}
+        
+    </div>
+    )
+  }
+}
