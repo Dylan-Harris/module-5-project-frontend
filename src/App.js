@@ -13,6 +13,7 @@ import { getGames } from './services/backend.js'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignUp from './components/auth/SignUp';
+import Game from './components/Game';
 
 
 
@@ -31,12 +32,12 @@ class App extends React.Component{
     return(
       <div className="App">
         <Router>
-          {/* <Switch> */}
-            <BackgroundLogin />
-            {/* <Route exact path={"/"} component={Main}></Route> */}
-            <SignUp />
-
-         {/* </Switch> */}
+          <React.Fragment>
+            <Route exact path="/" component={BackgroundLogin} />
+            <Route exact path="/SignUp" component={SignUp} />
+            <Route exact path="/Home" component={Main} />
+            <Route exact path="/Games" component={Game} />
+            </React.Fragment>
         </Router>
     </div>
     )

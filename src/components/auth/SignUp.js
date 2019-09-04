@@ -1,5 +1,21 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+// import Background from '.../images/login-background.jpg'
+import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
+
+
+// const styles = {
+//     paperContainer: {
+//         height: 1000,
+//         backgroundImage: `url(${Background})`,
+//         backgroundSize: 'cover',
+//         backgroundPosition: 'center',
+//         width: `calc(100vw + 48px)`,
+//         margin: -24,
+//         padding: 24
+//     }
+// };
+
 
 export default class SignUp extends React.Component {
     constructor(props) {
@@ -43,9 +59,11 @@ export default class SignUp extends React.Component {
             [e.target.name]: e.target.value
         })
     }
+    
 
     render() {
         return(
+            // <div style={styles.paperContainer}>
           <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='brown' textAlign='center'>
@@ -94,8 +112,12 @@ export default class SignUp extends React.Component {
               </Button>
             </Segment>
           </Form>
+          <Message>
+         <NavLink to="/">Return to Login Page</NavLink>
+      </Message>
         </Grid.Column>
       </Grid>
+    //   </div>
         )
       }
     }

@@ -1,16 +1,16 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
 
 export default class Login extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      user: {
         username: '',
         password: ''
       }
     }
-  }
+  
 
   handleChange = (e) => {
     console.log(e.target.value)
@@ -56,6 +56,7 @@ handleSubmit = (e) => {
           name='username'
           placeholder='Username'
           value={this.state.username}
+          onChange={this.handleChange}
           required />
           <Form.Input
             fluid
@@ -65,16 +66,17 @@ handleSubmit = (e) => {
             name='password'
             placeholder='Password'
             value={this.state.password}
+            onChange={this.handleChange}
             required
           />
 
-          <Button color='brown' fluid size='large'>
+          <NavLink to="/Home"><Button color='brown' fluid size='large'>
             Login
-          </Button>
+          </Button></NavLink>
         </Segment>
       </Form>
       <Message>
-        New to us? <a href='#'>Sign Up</a>
+        New to us? <NavLink to="/SignUp">Sign Up</NavLink>
       </Message>
     </Grid.Column>
   </Grid>
