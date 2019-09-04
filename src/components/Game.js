@@ -1,21 +1,19 @@
-import React from 'react';
+import React from 'react'
+import { Card, Icon, Grid, GridColumn } from 'semantic-ui-react'
+import Navbar from './Navbar';
 
-const Game = (props) => {
-    return(
-        <div>
-    <h2>{props.game.name}</h2>
-        <img src={props.game.background_image}></img>
-    </div>
-        
-    )
-}
-    
-    
-
-
-// const mapStateToProps = (state => {
-//     console.log(state)
-//     return state.games.map
-// })
+const Game = (props) => (
+    <div>
+        <Navbar />
+    <Grid container columns={3}>
+    <GridColumn>
+  <Card
+    // image={props.game.background_image}
+    // header={props.game.title}
+  />
+  </GridColumn>
+  </Grid>
+  </div>
+)
 
 export default Game

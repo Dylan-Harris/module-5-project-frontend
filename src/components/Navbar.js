@@ -10,13 +10,14 @@ import {
   Menu,
   Segment,
 } from 'semantic-ui-react'
+import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
 
 const Navbar = () => (
-  <div>
+  <div style={{paddingBottom: 200}}>
     <Menu fixed='top' color='brown' inverted>
       <Container>
-        <Menu.Item as='a'>Home</Menu.Item>
-        <Menu.Item as='a'>Games</Menu.Item>
+        <NavLink to="/Home"><Menu.Item as='a'>Home</Menu.Item> </NavLink>
+        <NavLink to="/Games"><Menu.Item as='a'>Games</Menu.Item></NavLink>
         <Menu.Item as='a'>Forums</Menu.Item>
         <Menu.Item as='a'>Friends</Menu.Item>
         <Menu.Item as='a' position='right'>Logout</Menu.Item>
