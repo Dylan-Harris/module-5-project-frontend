@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 // import Background from '.../images/login-background.jpg'
-import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 // const styles = {

@@ -1,10 +1,12 @@
 import { createStore } from 'redux'
 import gamesReducer from './reducers/gamesReducer'
 import { combineReducers } from 'redux';
+import forumReducer from './reducers/forumReducer'
 
 
 const rootReducer = combineReducers({
-    games: gamesReducer
+    games: gamesReducer,
+    forums: forumReducer
 })
 
 // const initalState = {

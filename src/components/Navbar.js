@@ -1,26 +1,43 @@
 import React from 'react'
-import {
-  Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
-  Image,
-  List,
-  Menu,
-  Segment,
-} from 'semantic-ui-react'
-import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Container, Menu, } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+
+const logout = () => {
+    if(localStorage.length !== 0) {
+        window.localStorage.clear()
+        alert('You have been successfully logged out.')
+        window.location.href = '/'
+    }
+}
+
+const loginButtonDisplay = () => {
+    if(localStorage.length === 0) {
+      return <Link to='/'>Login</Link>
+    } 
+    else {
+      return <Link to='/' onClick={logout}>Logout</Link>
+    }
+}
 
 const Navbar = () => (
-  <div style={{paddingBottom: 200}}>
+  <div style={{paddingBottom: 100}}>
     <Menu fixed='top' color='brown' inverted>
       <Container>
-        <NavLink to="/Home"><Menu.Item as='a'>Home</Menu.Item> </NavLink>
-        <NavLink to="/Games"><Menu.Item as='a'>Games</Menu.Item></NavLink>
-        <Menu.Item as='a'>Forums</Menu.Item>
-        <Menu.Item as='a'>Friends</Menu.Item>
-        <Menu.Item as='a' position='right'>Logout</Menu.Item>
+        <Menu.Item 
+        as={Link} 
+        to="/Home">Home
+        </Menu.Item> 
+        <Menu.Item as={Link} to="/Games">Games
+        </Menu.Item>
+        <Menu.Item 
+        to="/Forums" 
+        as={Link}>Forums
+        </Menu.Item>
+        <Menu.Item 
+        as={Link} 
+        to="/Friends">Friends
+        </Menu.Item>
+        <Menu.Item as={Link} to="/" position='right'>{loginButtonDisplay()}</Menu.Item>
       </Container>
     </Menu>
 </div>

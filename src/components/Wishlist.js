@@ -1,18 +1,24 @@
 import React from 'react'
-import { Container, Divider } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
+import Navbar from './Navbar'
 
 const Wishlist = () => (
-  <div>
-    <Container textAlign='center' style={{width: 200, marginTop: -255}}> 
-    <h1 style={{color: 'white'}}>Games Wishlist</h1>
-      <h3 style={{color: 'white'}}>
-      Gears of War
-      </h3>
-      <h3 style={{color: 'white'}}>
-      Halo 3
-      </h3>
-      
-    </Container>
+    <div>
+    <Navbar />  <Grid reversed='computer vertically' style={{marginTop: -400}}>
+    <Grid.Row>
+      <Grid.Column style={{color: 'white'}}><h3>Computer Row 4</h3></Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+    <Grid.Column style={{color: 'white'}}><h3>Computer Row 3</h3></Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+    <Grid.Column style={{color: 'white'}}><h3>Computer Row 2</h3></Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+    <Grid.Column style={{color: 'white'}}><h3>Computer Row 1</h3></Grid.Column>
+    </Grid.Row>
+  <h1 style={{color: 'white'}}>Games Wishlist</h1>
+  </Grid>
   </div>
 )
 

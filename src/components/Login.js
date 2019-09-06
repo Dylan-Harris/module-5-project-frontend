@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-import { Route, NavLink, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import {  NavLink } from 'react-router-dom'
+
 
 export default class Login extends React.Component{
   constructor(props) {
@@ -29,16 +30,22 @@ handleSubmit = (e) => {
           Accept: 'application/json'
       },
       body: JSON.stringify({
-          user: {
-          username: this.state.username,
-          password: this.state.password,
-          }
+          user: this.state
       })
   }, { withCredentials: true })
-  .then(res => console.log("res from login", res))
-  .catch(error => {
-      console.log("registration error", error)
+  .then(res => res.json())
+  .then(data => {
+    if(data.jwt) {
+    localStorage.setItem('jwt', data.jwt)
+    localStorage.setItem('currentUser', JSON.stringify(data.user))
+    window.location.href='/Home'
+    }
+    else {
+      alert(data.error)
+      window.location.href = "/"
+    }
   })
+  
 }
 
   render() {
@@ -70,9 +77,9 @@ handleSubmit = (e) => {
             required
           />
 
-          <NavLink to="/Home"><Button color='brown' fluid size='large'>
+          <Button color='brown' fluid size='large'>
             Login
-          </Button></NavLink>
+          </Button>
         </Segment>
       </Form>
       <Message>

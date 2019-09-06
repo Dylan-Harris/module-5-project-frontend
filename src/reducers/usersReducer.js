@@ -1,11 +1,12 @@
 const initialState = {
-    games: []
+    user: {},
+    users: []
 };
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'GET_GAMES': {
-            return {...state, games: action.data.games}
+        case 'GET_USER': {
+            return {...state, user: action.data.games}
         }
         default:
         return state
