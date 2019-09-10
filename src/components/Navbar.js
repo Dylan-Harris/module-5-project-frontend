@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const logout = () => {
     if(localStorage.length !== 0) {
-        window.localStorage.clear()
+        localStorage.clear()
         alert('You have been successfully logged out.')
         window.location.href = '/'
     }

@@ -1,28 +1,35 @@
 import React from 'react'
 import { Card, Grid, GridColumn } from 'semantic-ui-react'
 import Navbar from './Navbar';
+import { connect } from 'react-redux'
 
-const styles = {
-    center: {
-      marginLeft: "auto",
-      marginRight: "auto"
-    }
+ export default class Game extends React.Component{
+  constructor(props) {
+    super(props)
   }
 
-
-const Game = (props) => (
-    
-    <div>
+  render() {
+    const styles = {
+      center: {
+        marginLeft: "auto",
+        marginRight: "auto"
+      }
+    }
+    return(
+      <div>
         <Navbar />
         <div className={styles.center}>
     <div style={{padding: 20}}>
   <Card
-    image={props.game.background_image}
-    header={props.game.title}
+    image={this.props.game.background_image}
+    header={this.props.game.title}
   />
   <button>Add Game to Wishlist</button>
     </div>
     </div>
   </div>
-)
-export default Game
+    )
+  }
+}
+
+

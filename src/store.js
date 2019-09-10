@@ -2,11 +2,17 @@ import { createStore } from 'redux'
 import gamesReducer from './reducers/gamesReducer'
 import { combineReducers } from 'redux';
 import forumReducer from './reducers/forumReducer'
+import usersReducer from './reducers/usersReducer';
+import wishlistReducer from './reducers/wishlistReducer';
+import commentsReducer from './reducers/commentsReducer';
 
 
 const rootReducer = combineReducers({
     games: gamesReducer,
-    forums: forumReducer
+    forums: forumReducer,
+    users: usersReducer,
+    wishlist: wishlistReducer,
+    comments: commentsReducer
 })
 
 // const initalState = {
