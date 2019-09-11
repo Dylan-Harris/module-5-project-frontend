@@ -20,7 +20,7 @@ export default class BackgroundLogin extends React.Component {
     render() {
         return(
             <div style={styles.paperContainer}>
-            <Login />
+            <Login fetchEverything={this.props.fetchEverything} />
             </div>
         )
     }

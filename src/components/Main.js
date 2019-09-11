@@ -3,10 +3,13 @@ import UserCard from './UserCard';
 import Wishlist from './Wishlist';
 import Friends from './Friends';
 import Navbar from './Navbar'
-import { getUser } from '../services/backend';
+import { getProfile } from '../services/backend';
 import { connect } from 'react-redux'
 
 class Main extends React.Component{
+    constructor(props) {
+        super(props)
+    }
 
 
     render() {
@@ -20,4 +23,6 @@ class Main extends React.Component{
         )
     }
 }
-export default connect()(Main)
+
+const mapStateToProps = state => ({ logged_user: state.logged_user})
+export default connect(mapStateToProps)(Main)

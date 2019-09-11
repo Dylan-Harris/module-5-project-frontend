@@ -40,4 +40,31 @@ export function getComments() {
     return fetch(comments_array).then(res => res.json())
 }
 
+export function addComment() {
+    return fetch(comments_array, {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+            accept: 'application/json'
+        }, 
+        body: JSON.stringify({
+            comment: this.state
+        })
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
+
+export function getProfile() {
+   const token = localStorage.getItem('jwt')
+    return fetch(USER, {
+         method: "GET", 
+         headers: {
+             "Content-Type": "application/json",
+             accept: "application/json",
+             "Authorization": `Bearer ${token}`
+         }
+    })
+    .then(res => res.json())
+}
 

@@ -5,8 +5,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'GET_USER': {
-            return {...state, logged_user: action.data}
+        case 'GET_PROFILE': {
+            return {...state, logged_user: action.data.user}
         }
         // case 'GET_USER': {
         //     console.log(state.users)
@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
         //    return {...state, logged_user: current_user[0]}
         // }
         case 'GET_USERS': {
-            return {...state, users: action.users}
+            return {...state, users: action.data}
         }
         default:
         return state

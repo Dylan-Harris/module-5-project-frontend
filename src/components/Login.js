@@ -1,9 +1,11 @@
 import React from 'react'
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import {  NavLink } from 'react-router-dom'
+import {getProfile} from '../services/backend'
+import { connect } from 'react-redux'
 
 
-export default class Login extends React.Component{
+ class Login extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
@@ -37,14 +39,16 @@ handleSubmit = (e) => {
   .then(data => {
     if(data.jwt) {
     localStorage.setItem('jwt', data.jwt)
-    localStorage.setItem('currentUser', JSON.stringify(data.user))
+    // localStorage.setItem('currentUser', JSON.stringify(data.user))
     window.location.href='/Home'
+    this.props.fetchEverything()
     }
     else {
       alert(data.error)
       window.location.href = "/"
     }
   })
+  
   
 }
 
@@ -90,3 +94,7 @@ handleSubmit = (e) => {
     )
   }
 }
+const mapStateToProps = state => {
+  return {logged_user: state.logged_user}
+}
+export default connect(mapStateToProps)(Login)
