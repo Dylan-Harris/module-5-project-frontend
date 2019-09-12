@@ -56,8 +56,10 @@ handleSubmit = (e) => {
     return(
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
     <Grid.Column style={{ maxWidth: 450 }}>
-      <Header as='h2' color='brown' textAlign='center'>
-      Log-in to your account
+      <Header as='h1' color='brown' textAlign='center'>
+      Welcome to Gamer's Paradise
+     <Header as='h2' color='brown' textAlign='center'>Log-in to your account</Header>
+    
       </Header>
       <Form size='large' onSubmit={this.handleSubmit}>
         <Segment stacked>

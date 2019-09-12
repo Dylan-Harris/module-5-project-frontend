@@ -2,11 +2,15 @@ import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 import Background from '../images/login-background.jpg'
 import { connect } from 'react-redux'
+import {Button} from 'semantic-ui-react'
 
 
 class UserCard extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      click: false
+    }
   }
 
   componentDidMount() {
@@ -27,6 +31,7 @@ class UserCard extends React.Component {
       <Card.Description>
         {this.props.users.logged_user.bio}
       </Card.Description>
+      {/* <Button style={{color: 'brown'}}>Edit Profile</Button> */}
     </Card.Content>
   </Card>
         )

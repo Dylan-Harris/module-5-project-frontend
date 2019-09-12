@@ -29,7 +29,7 @@ export function getForums() {
 // }
 
 export function getWishlist() {
-    return fetch(wishlist_api).then(res => res.json()).then(data => console.log(data))
+    return fetch(wishlist_api).then(res => res.json())
 }
 
 export function getUsers() {

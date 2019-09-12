@@ -3,6 +3,7 @@ import { Button, Comment, Form, Header, Icon, Grid } from 'semantic-ui-react'
 import Navbar from './Navbar'
 import getUsers, { addComment } from '../services/backend'
 import { connect } from 'react-redux'
+import {getComments} from '../services/backend'
 
 class Comments extends React.Component{
   constructor(props) {
@@ -37,6 +38,10 @@ class Comments extends React.Component{
       })
     })
     .then(res => res.json())
+    .then(getComments().then(data => this.props.dispatch({
+      type: 'ADD_COMMENTS',
+      data
+    })))
     .then(this.props.fetchEverything())
   }
     render() {

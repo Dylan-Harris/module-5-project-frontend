@@ -23,6 +23,9 @@ const Navbar = () => (
   <div style={{paddingBottom: 100}}>
     <Menu fixed='top' color='brown' inverted>
       <Container>
+      <Menu.Item 
+       >Gamer's Paradise
+        </Menu.Item> 
         <Menu.Item 
         as={Link} 
         to="/Home">Home
@@ -33,10 +36,10 @@ const Navbar = () => (
         to="/Forums" 
         as={Link}>Forums
         </Menu.Item>
-        <Menu.Item 
+        {/* <Menu.Item 
         as={Link} 
         to="/Friends">Friends
-        </Menu.Item>
+        </Menu.Item> */}
         <Menu.Item as={Link} to="/" position='right'>{loginButtonDisplay()}</Menu.Item>
       </Container>
     </Menu>

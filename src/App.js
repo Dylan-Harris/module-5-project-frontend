@@ -13,6 +13,7 @@ import { getForums } from './services/backend'
 import ForumsContainer from './containers/ForumsContainer';
 import Comments from './components/Comments'
 import CommentsContainer from './containers/CommentsContainer';
+import EditForm from './components/EditForm';
 
 
 
@@ -77,6 +78,7 @@ showForum = (id) => {
               return <Comments fetchEverything={this.fetchEverything} forum={this.showForum(match.params.id)} />
             }}/>
             <Route exact path="/Friends" component={FriendsList} />
+            <Route exact path="/Edit" component={EditForm} />
             </React.Fragment>
         </Router>
     </div>
